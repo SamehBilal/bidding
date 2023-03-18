@@ -64,9 +64,9 @@ class pusher
         return $this->uploadDir . '/' . $this->getUploadedName($key);
     }
 
-    private function broadcasting($bid)
+    private function broadcasting($name,$bid)
     {
-        return $this->uploadDir . '/' . $this->getUploadedName($key);
+        event(new \App\Events\BidEvent($name,$bid));
     }
 
     private function LowestBid()

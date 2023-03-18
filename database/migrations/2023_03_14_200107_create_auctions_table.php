@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('auctions', function (Blueprint $table) {
             $table->id();
+            $table->set('type',['tbased','pbased','altomo','dbased']);
             $table->bigInteger('starting_bid');
             $table->bigInteger('highest_bid');
             $table->datetime('start_time');

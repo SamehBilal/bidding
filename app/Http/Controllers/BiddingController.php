@@ -9,7 +9,7 @@ class BiddingController extends Controller
 {
     public function bid(Request $request)
     {
-        return event(new \App\Events\BidEvent($request->input('name'),$request->input('bid')));
+        return event(new \App\Events\BidEvent($request->input('name'),$request->input('bid'),1));
 
         /*$auction = Auction::findOrFail($request->auction_id);
         if($request->amount > $auction->starting_bid && $request->amount >= $auction->highest_bid)

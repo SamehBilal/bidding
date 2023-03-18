@@ -16,13 +16,15 @@ class BidEvent implements ShouldBroadcast
 
     public $name;
     public $bid;
+    public $auction;
     /**
      * Create a new event instance.
      */
-    public function __construct($name, $bid)
+    public function __construct($name, $bid, $auction)
     {
         $this->name = $name;
         $this->bid = $bid;
+        $this->auction = $auction;
     }
 
     /**
@@ -33,7 +35,7 @@ class BidEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new Channel('auction'),
+            new PrivateChannel('bid.'.$this->bid),
         ];
     }
 
