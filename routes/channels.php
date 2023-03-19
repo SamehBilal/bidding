@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-/* Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
+ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
-}); */
+});
 
 
-Broadcast::channel('bid.{bidId}', function ($user, $bidId) {
+/*Broadcast::channel('bid.{bidId}', function ($user, $bidId) {
     $bid = Bid::find($bidId);
     return $user->id == $bid->user_id;
-});
+});*/

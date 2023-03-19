@@ -35,12 +35,12 @@ class BidEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('bid.'.$this->bid),
+            new channel('auction'/*.$this->bid*/),
         ];
     }
 
-    public function broadcastAs()
+    /*public function broadcastAs()
     {
         return 'bidding';
-    }
+    }*/
 }

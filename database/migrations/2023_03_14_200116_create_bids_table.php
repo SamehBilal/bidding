@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bids', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('amount');
+            $table->bigInteger('bid_amount');
             $table->unsignedBigInteger('auction_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('auction_id')

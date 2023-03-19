@@ -11,6 +11,13 @@ class Bid extends Model
 
     public function auction()
     {
-        return $this->belongsTo(Auction::class,'id','auction_id');
+        return $this->hasOne(Auction::class,'id','auction_id');
+    }
+
+    public static function rules()
+    {
+        return [
+            'bid_amount'          => "required|numeric",
+        ];
     }
 }
