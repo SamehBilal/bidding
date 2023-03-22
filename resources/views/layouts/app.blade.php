@@ -41,7 +41,5 @@
             </main>
         </div>
 
-        @include('js')
-
     </body>
 </html>

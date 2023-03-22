@@ -9,10 +9,15 @@ use Illuminate\Validation\Rule;
 class Auction extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+    protected $casts = [
+        'starting_time'=>'datetime',
+        'ending_time'=>'datetime',
+    ];
 
     public function bid()
     {
-        return $this->hasMany(Bid::class);
+        return $this->hasMany(Bid::class)->orderByDesc('id');
     }
 
     public static function rules($update = false, $id = null)

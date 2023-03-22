@@ -21,7 +21,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $auctions = \App\Models\Auction::all();
+    return view('dashboard',compact('auctions'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

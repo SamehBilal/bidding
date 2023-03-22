@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         /* Auctions */
         $auctions = [
             ['type' => 'tbased',     'starting_bid' => '600',     'highest_bid' => 600,   'bid_ratio' => 10,   'starting_time' => now(),       'ending_time' => date("Y-m-d H:i:s", strtotime("tomorrow")),     'created_at' => now()],
-            ['type' => 'dtbased',    'starting_bid' => '600',     'highest_bid' => 600,   'bid_ratio' => 20,   'starting_time' => now(),       'ending_time' => date("Y-m-d H:i:s", strtotime("tomorrow")),     'created_at' => now()],
+            ['type' => 'tbased',     'starting_bid' => '600',     'highest_bid' => 600,   'bid_ratio' => 20,   'starting_time' => now(),       'ending_time' => date("Y-m-d H:i:s", strtotime("tomorrow")),     'created_at' => now()],
             ['type' => 'pbased',     'starting_bid' => '600',     'highest_bid' => 600,   'bid_ratio' => 10,   'starting_time' => now(),       'ending_time' => date("Y-m-d H:i:s", strtotime("tomorrow")),     'created_at' => now()],
             ['type' => 'altomo',     'starting_bid' => '600',     'highest_bid' => 600,   'bid_ratio' => 25,   'starting_time' => now(),       'ending_time' => date("Y-m-d H:i:s", strtotime("tomorrow")),     'created_at' => now()],
         ];
