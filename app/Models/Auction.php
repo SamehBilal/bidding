@@ -20,6 +20,11 @@ class Auction extends Model
         return $this->hasMany(Bid::class)->orderByDesc('id');
     }
 
+    public function message()
+    {
+        return $this->hasMany(Message::class)->orderByDesc('id');
+    }
+
     public static function rules($update = false, $id = null)
     {
         return [

@@ -29,7 +29,7 @@ class Pusher
         {
             $type = $this->{$auction->type}($auction,$bid); // Declaring the type of auction function.
             if(!$type){
-                if($auction->type == 'pbased')
+                if($auction->type == 'pbased' || $auction->type == 'altomo')
                 {
                     $bid = $this->createBid($auction->id,$bid,$user->id);       // Creating Bid.
                     $this->broadcast($auction,$bid, $user->name);               // broadcasting the bid.
@@ -112,9 +112,15 @@ class Pusher
         return false;
     }
 
-    private function altomo()
+    private function altomo($auction,$bid)
     {
-        return true;
+        if($bid < $auction->desired_price)
+        {
+            return true;
+        }
+        $this->UpdateAuction($auction,$bid,'pbased'); // Updating the highest bid & Status
+
+        return false;
     }
 
     /* Updating the auction's fields */

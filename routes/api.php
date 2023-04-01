@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('chat/auction/{auction}', function (Auction $auction) {
+    return view('chat',compact('auction'));
+})->middleware(['auth'])->name('auction.view');
+
+Route::post('/message/{auction}', [\App\Http\Controllers\MessagesController::class, 'store'])->name('message.store');
